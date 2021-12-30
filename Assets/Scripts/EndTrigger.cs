@@ -8,6 +8,7 @@ public class EndTrigger : MonoBehaviour
 
     void OnTriggerEnter ()
     {
-        gameManager.CompleteLevel();
+        gameManager.SlowdownPlayer();
+        gameManager.CompleteLevel();        
     }
 }

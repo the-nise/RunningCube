@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerMovement : MonoBehaviour
-{
+{   
+    public Game_Manager gm;
     public Rigidbody rb;
     public float sidewaysForce = 500f;
     public float forwardForce = 2000f;
+    //public Vector3 stop;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,5 +42,14 @@ public class PlayerMovement : MonoBehaviour
         //     rb.AddForce(0, 0, -sidewaysForce * Time.deltaTime, ForceMode.VelocityChange);
         // }
 
+    }
+
+    public void Slowdown ()
+    {
+        {
+            forwardForce = 0;
+            sidewaysForce = 0;
+            // rb.velocity = rb.velocity * 0.01f * Time.deltaTime;
+        }
     }
 }

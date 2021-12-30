@@ -9,9 +9,13 @@ public class Game_Manager : MonoBehaviour
 
     public float restartDelay = 1.0f;
 
+    public GameObject completeLevelUI;
+
+    public PlayerMovement endingCounterforce;
+
     public void CompleteLevel ()
     {
-        Debug.Log("VI VON");
+        completeLevelUI.SetActive(true);
     }
 
     public void EndGame ()
@@ -26,8 +30,14 @@ public class Game_Manager : MonoBehaviour
         
         
     }
+
     void Restart ()
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void SlowdownPlayer ()
+    {  
+        endingCounterforce.Slowdown();        
+    }
 }
